@@ -1,4 +1,4 @@
-public class Personagem {
+public class Personagem extends Monstro{
     private String nome;
 
 
@@ -8,17 +8,21 @@ public class Personagem {
     private int destreza;
     private int inteligencia;
     private int vida;
+    private int mana;
 
-        private ClasseMae classe;
 
-        public void setClasse(ClasseMae classe){
-            this.classe = classe;
-            classe.aplicarBonusDeClasse(this);
-            classe.habilidadeEspecial(this);
-        }
-        public ClasseMae getClasse(){
-            return classe;
-        }
+    private ClasseMae classe;
+
+    public void setClasse(ClasseMae classe) {
+        this.classe = classe;
+        classe.aplicarBonusDeClasse(this);
+        classe.habilidadeEspecial1(this, this);
+        classe.habilidadeEspecial2(this, this);
+    }
+
+    public ClasseMae getClasse() {
+        return classe;
+    }
 
 
     private Raca raca;
@@ -33,7 +37,6 @@ public class Personagem {
     }
 
 
-
     public Personagem(String nome) {
         this.nome = nome;
         this.raca = raca;
@@ -44,6 +47,15 @@ public class Personagem {
         this.destreza = 10;
         this.inteligencia = 10;
         this.vida = 100;
+        this.mana = 100;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana() {
+        this.mana = mana;
     }
 
     public int getNivel() {
@@ -90,6 +102,7 @@ public class Personagem {
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -103,3 +116,5 @@ public class Personagem {
         this.sexo = sexo;
     }
 }
+
+

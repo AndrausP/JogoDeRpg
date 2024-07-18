@@ -13,7 +13,26 @@ public class Ladino implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial(Personagem personagem) {
+    public void habilidadeEspecial2(Personagem personagem, Monstro monstro) {
+        System.out.println("Você usou o Golpe Estrategico.");
+        monstro.setVidaMonstro(monstro.getVidaMonstro() - 10);
+        System.out.println("Você atacou o Monstro e causou 10 pontos de dano !");
+    }
 
+    @Override
+    public String getNomeHabilidade1() {
+        return "Hiper Foco - AUMENTA SUA DESTREZA EM 15 PONTOS";
+    }
+
+    @Override
+    public String getNomeHabilidade2() {
+        return "Golpe Estrategico - CAUSA 10 DE DANO";
+    }
+
+    @Override
+    public void habilidadeEspecial1(Personagem personagem, Monstro monstro) {
+        System.out.println("Você usou a Hiper Foco.");
+        personagem.setDestreza(personagem.getDestreza() + 15);
+        System.out.println("Você ganhou mais 15 pontos de destreza !");
     }
 }
