@@ -7,7 +7,7 @@ public class RPG {
     public RPG() {
         this.scanner = new Scanner(System.in);
     }
-    public void criarPersonagem() {
+    public Personagem criarPersonagem() {
         System.out.println("Digite o nome do seu personagem:");
         String nome = scanner.nextLine();
         Personagem personagem = new Personagem(nome);
@@ -18,8 +18,9 @@ public class RPG {
         exibirConfirmacao(personagem);
 
 
-
+        return personagem;
     }
+
 
     private void escolherRaca(Personagem personagem) {
         System.out.println("Escolha a raça do seu personagem:");
@@ -98,5 +99,25 @@ public class RPG {
         System.out.println("Destreza: " + personagem.getDestreza());
         System.out.println("Inteligência: " + personagem.getInteligencia());
         System.out.println("Vida: " + personagem.getVida());
+        System.out.println("Habilidade 1 : " + personagem.getClasse().getNomeHabilidade1());
+        System.out.println("Habilidade 2 : " + personagem.getClasse().getNomeHabilidade2());
     }
+    public Monstro criarMonstro(){
+        Monstro Monstro = new Monstro();
+        return Monstro;
+    }
+
+    public static void main(String[] args) { //inciar a aplicação por aqui
+
+        RPG novojogo = new RPG();
+        Personagem heroi = novojogo.criarPersonagem();
+
+        RPG novomonstro = new RPG();
+        Monstro monstro = novomonstro.criarMonstro();
+    }
+  public void lutaInicial(Personagem personagem, Monstro monstro){
+
+  }
+
 }
+
