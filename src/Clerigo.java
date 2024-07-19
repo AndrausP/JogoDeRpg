@@ -12,9 +12,9 @@ public class Clerigo implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial2(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial2(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou a Benção divina.");
-        personagem.setVida(personagem.getVida() + 30);
+        heroi.setVida(heroi.getVida() + 30);
         System.out.println("Você se curou em 30 pontos de vida !");
     }
 
@@ -29,10 +29,11 @@ public class Clerigo implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial1(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial1(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou o Ataque dos Deuses.");
         monstro.setVidaMonstro(monstro.getVidaMonstro() - 10);
         System.out.println("Você atacou o Monstro e causou 10 pontos de dano !");
+        System.out.println("Vida do Monstro: " + monstro.getVidaMonstro());
 
     }
 }

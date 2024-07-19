@@ -13,10 +13,12 @@ public class Ladino implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial2(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial2(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou o Golpe Estrategico.");
         monstro.setVidaMonstro(monstro.getVidaMonstro() - 10);
         System.out.println("Você atacou o Monstro e causou 10 pontos de dano !");
+        System.out.println("Vida do Monstro: " + monstro.getVidaMonstro());
+
     }
 
     @Override
@@ -30,9 +32,9 @@ public class Ladino implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial1(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial1(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou a Hiper Foco.");
-        personagem.setDestreza(personagem.getDestreza() + 15);
+        heroi.setDestreza(heroi.getDestreza() + 15);
         System.out.println("Você ganhou mais 15 pontos de destreza !");
     }
 }

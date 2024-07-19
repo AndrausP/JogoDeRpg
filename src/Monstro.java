@@ -5,9 +5,11 @@ public class Monstro {
   private int monstroAtaque = 15;
 
   public void monstroAtaquePersonagem(Personagem heroi){
+      System.out.println("-----------------");
       System.out.println("Glacios te bateu !!");
       heroi.setVida(heroi.getVida() - monstroAtaque);
       System.out.println("Vida do personagem: " + heroi.getVida());
+      System.out.println("-----------------");
 
   }
 

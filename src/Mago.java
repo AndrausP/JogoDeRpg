@@ -12,16 +12,17 @@ public class Mago  implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial1(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial1(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou a magia Bola de Fogo.");
         monstro.setVidaMonstro(monstro.getVidaMonstro() - 25);
         System.out.println("Você atacou o Monstro e causou 25 pontos de dano !");
+        System.out.println("Vida do Monstro: " + monstro.getVidaMonstro());
     }
 
     @Override
-    public void habilidadeEspecial2(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial2(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou a Magia de Cura.");
-        personagem.setVida(personagem.getVida() + 25);
+        heroi.setVida(heroi.getVida() + 25);
         System.out.println("Você se curou em 25 pontos de vida !");
     }
 

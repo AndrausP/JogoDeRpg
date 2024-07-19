@@ -13,16 +13,17 @@ public class Guerreiro implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial1(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial1(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou o Ataque de Trovoada.");
         monstro.setVidaMonstro(monstro.getVidaMonstro() - 15);
         System.out.println("Você atacou o Monstro e causou 15 pontos de dano !");
+        System.out.println("Vida do Monstro: " + monstro.getVidaMonstro());
     }
 
     @Override
-    public void habilidadeEspecial2(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial2(Personagem heroi, Monstro monstro) {
                 System.out.println("Você usou a Cura Divina.");
-                personagem.setVida(personagem.getVida() + 15);
+                heroi.setVida(heroi.getVida() + 15);
                 System.out.println("Você se curou em 15 pontos de vida !");
     }
 
