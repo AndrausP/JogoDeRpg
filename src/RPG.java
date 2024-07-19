@@ -103,10 +103,42 @@ public class RPG {
         System.out.println("Habilidade 2 : " + personagem.getClasse().getNomeHabilidade2());
     }
     public Monstro criarMonstro(){
-        Monstro Monstro = new Monstro();
-        return Monstro;
+        Monstro monstro = new Monstro();
+        return monstro;
     }
 
+    public void iniciarBatalha(Personagem heroi, Monstro monstro) {
+        while (heroi.getVida() > 0 && monstro.getVidaMonstro() > 0) {
+            // Turno do herói
+            System.out.println("-----------------");
+            System.out.println("Enquanto estava andando pela floreste um monstro aparece, Glacios o monstro de gelo aparece para te atacar, o que você faz ?");
+            System.out.println("-----------------");
+
+
+            System.out.println("Escolha uma habilidade:");
+            System.out.println("1. " + heroi.getClasse().getNomeHabilidade1());
+            System.out.println("2. " + heroi.getClasse().getNomeHabilidade2());
+            int escolha = scanner.nextInt();
+
+            switch (escolha) {
+                case 1 -> heroi.getClasse().habilidadeEspecial1( heroi, monstro);
+                case 2 -> heroi.getClasse().habilidadeEspecial2( heroi, monstro);
+
+                default -> System.out.println("Escolha inválida!");
+            }
+
+            // Turno do monstro, se ainda estiver vivo
+            if (monstro.getVidaMonstro() > 0) {
+                monstro.monstroAtaquePersonagem(heroi);
+            }
+        }
+
+        if (heroi.getVida() <= 0) {
+            System.out.println("Você perdeu!");
+        } else if (monstro.getVidaMonstro() <= 0) {
+            System.out.println("Você venceu!");
+        }
+    }
     public static void main(String[] args) { //inciar a aplicação por aqui
 
         RPG novojogo = new RPG();
@@ -114,10 +146,11 @@ public class RPG {
 
         RPG novomonstro = new RPG();
         Monstro monstro = novomonstro.criarMonstro();
-    }
-  public void lutaInicial(Personagem personagem, Monstro monstro){
 
-  }
+        novojogo.iniciarBatalha(heroi, monstro);
+
+    }
+
 
 }
 

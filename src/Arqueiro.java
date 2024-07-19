@@ -11,7 +11,7 @@ public class Arqueiro implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial2(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial2(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou o Flechas Perfurantes.");
         monstro.setVidaMonstro(monstro.getVidaMonstro() - 25);
         System.out.println("Você atacou o Monstro e causou 25 pontos de dano !");
@@ -28,9 +28,9 @@ public class Arqueiro implements ClasseMae{
     }
 
     @Override
-    public void habilidadeEspecial1(Personagem personagem, Monstro monstro) {
+    public void habilidadeEspecial1(Personagem heroi, Monstro monstro) {
         System.out.println("Você usou uma Poção de Cura.");
-        personagem.setVida(personagem.getVida() + 20);
+        heroi.setVida(heroi.getVida() + 20);
         System.out.println("Você se curou em 20 pontos de vida !");
     }
 }
